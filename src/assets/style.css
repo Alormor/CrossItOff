@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css');
+
+:root {
+  /* Color Palette provided by user */
+  --color-magenta: #AD204A;
+  --color-orange: #FF9B45;
+  --color-cyan: #00A0B8;
+  --color-red: #DD2330;
+  --color-yellow: #FED348;
+  --color-dark: #1B110F;
+  
+  /* Semantic assignments */
+  --color-bg: #FFFDF9; /* Soft off-white for readability */
+  --color-text: var(--color-dark);
+  --color-primary: var(--color-cyan);
+  --color-secondary: var(--color-magenta);
+  --color-accent: var(--color-orange);
+
+  /* Fonts */
+  --font-fun: 'Fredoka', cursive;
+  --font-body: 'Nunito', sans-serif;
+
+  /* Sizing / Spacing using rem */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --radius: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-fun);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+button {
+  font-family: var(--font-fun);
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+input[type="text"], input[type="file"] {
+  font-family: var(--font-body);
+  padding: 0.5rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: var(--color-magenta);
+}
+
+a {
+  color: var(--color-magenta);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
