@@ -85,7 +85,7 @@ function loginMicrosoft(){
               v-model="email"
               class="auth-input"
               placeholder="email@example.com"
-              @keyup.enter="loginEmail()"
+              @keydown.enter="loginEmail()"
           >
         </div>
 
@@ -96,7 +96,7 @@ function loginMicrosoft(){
               v-model="password"
               class="auth-input"
               placeholder="••••••••"
-              @keyup.enter="loginEmail()"
+              @keydown.enter="loginEmail()"
           >
         </div>
 

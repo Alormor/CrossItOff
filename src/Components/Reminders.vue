@@ -9,7 +9,6 @@ const props = defineProps(['toDoList', 'isAdmin']);
 var editText = ref("");
 var editing = ref(false);
 var confirmDel = ref(false);
-var isDeleting = ref(false);
 var curIndex = ref(-1);
 
 function startEdit(task, index){
@@ -121,7 +120,7 @@ const remainingTasks = computed(() => {
             class="task-edit-input"
           >
           <div class="task-edit-actions">
-            <button @click="editTask(task.id)" class="btn-save"><i class="bi bi-save"></i> Save</button>
+            <button @click="editTask(task.id)" class="btn-save"><i class="bi bi-save"></i>Save</button>
             <button @click="cancelAction()" class="btn-cancel">Cancel</button>
           </div>
         </section>
@@ -144,7 +143,7 @@ const remainingTasks = computed(() => {
 
             <div v-if="task.fileUrl" class="task-attachment">
               <p class="task-name">{{ task.fileName }}</p>
-              <a :href="`${task.fileUrl}?download=`"download target="_blank" class="task-file-link"><i class="bi bi-paperclip"></i> Download File</a>
+              <a :href="`${task.fileUrl}?download=`"download target="_blank" class="task-file-link"><i class="bi bi-paperclip"></i>Download File</a>
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 <script setup>
-import { ref, computed } from "vue";
-import { useCollection, useCurrentUser } from "vuefire";
-import { query, where, doc, addDoc, deleteDoc, collection, getFirestore } from 'firebase/firestore';
+import { ref } from "vue";
+import { useCurrentUser } from "vuefire";
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import {supabase} from '../supabase';
 
 import Reminders from "./Reminders.vue";
@@ -93,7 +93,7 @@ async function uploadFile() {
           >
           <div class="todo-actions">
             <input type="file" ref="fileInput" @change="addFile" class="todo-input-file">
-            <button type="submit" class="todo-btn-add"><i class="bi bi-plus-circle-fill"></i> Add Task</button>
+            <button type="submit" class="todo-btn-add"><i class="bi bi-plus-circle-fill"></i>Add Task</button>
           </div>
         </form>
       </div>
@@ -128,6 +128,12 @@ async function uploadFile() {
   font-size: 3rem;
 }
 
+@media (max-width: 768px) {
+  .todo-title {
+    font-size: 2rem;
+  }
+}
+
 .todo-bar {
   background-color: var(--color-bg);
   padding: var(--spacing-md);
@@ -150,6 +156,12 @@ async function uploadFile() {
   grid-template-columns: 1fr auto;
   gap: var(--spacing-md);
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .todo-actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 .todo-input-file {

@@ -46,7 +46,7 @@ const routes = [
   { path: '/admin', component: AdminToDo, meta: { requiresAuth: true }}
 ];
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
 });

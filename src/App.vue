@@ -75,6 +75,12 @@ function logout(){
   gap: var(--spacing-md);
 }
 
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+}
+
 .heading__title {
   margin: 0;
   color: var(--color-magenta);
@@ -114,6 +120,12 @@ function logout(){
   grid-template-columns: auto auto;
   gap: var(--spacing-md);
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    grid-template-columns: 1fr;
+  }
 }
 
 .nav-container__user-name {
