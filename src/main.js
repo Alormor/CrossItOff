@@ -42,8 +42,8 @@ const routes = [
   { path: '/', component: LandingPage, meta: { requiresAuth: false }},
   { path: '/login', component: Login, meta: { OnlyGuests: true}},
   { path: '/register', component: Register, meta: { OnlyGuests: true}},
-  { path: '/todolist', component: UserToDo, meta: { requiresAuth: true }},
-  { path: '/admin', component: AdminToDo, meta: { requiresAuth: true }}
+  { path: '/todolist', component: UserToDo, meta: { requiresAuth: true }, meta: {logged:true}},
+  { path: '/admin', component: AdminToDo, meta: { requiresAuth: true }, meta: {logged:true}}
 ];
 
 const router = createRouter({
@@ -53,7 +53,10 @@ const router = createRouter({
 
 router.beforeEach(async (to, from) => {
   const user = await getCurrentUser(); 
-  
+  if(!to.meta.logged && user){
+    return '/todolist';
+  }
+
   if (to.meta.requiresAuth && !user) {
     return '/';
   }

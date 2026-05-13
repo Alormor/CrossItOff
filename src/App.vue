@@ -30,7 +30,7 @@ function logout(){
 
       <nav class="nav">
         <ul class="nav-list">
-          <li class="nav-item"><RouterLink to="/">Home</RouterLink></li>
+          <li v-if="!user"class="nav-item"><RouterLink to="/">Home</RouterLink></li>
           <li v-if="!user" class="nav-item"><RouterLink to="/login">Login</RouterLink></li>
           <li v-if="!user" class="nav-item"><RouterLink to="/register">Register</RouterLink></li>
           <li v-if="user" class="nav-item"><RouterLink to="/todolist">To-Do List</RouterLink></li>
